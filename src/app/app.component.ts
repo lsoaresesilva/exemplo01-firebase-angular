@@ -17,7 +17,7 @@ export class AppComponent{
   pessoa:Pessoa;
 
   constructor(fireDb:AngularFireDatabase){
-    this.pessoaDB = fireDb.list<Pessoa>('maoe');
+    this.pessoaDB = fireDb.list<Pessoa>('pessoas');
     
     this.pessoaDB.snapshotChanges().subscribe(res=>{
      
