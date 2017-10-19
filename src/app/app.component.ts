@@ -20,8 +20,7 @@ export class AppComponent{
     this.pessoaDB = fireDb.list<Pessoa>('maoe');
     
     this.pessoaDB.snapshotChanges().subscribe(res=>{
-      let oi = res;
-      let x = oi;
+     
       let pessoas:Pessoa[] = [];
       for(let i =0; i < res.length;i++){
         let key = res[i].key;
