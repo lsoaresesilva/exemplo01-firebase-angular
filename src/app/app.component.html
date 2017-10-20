@@ -1,12 +1,12 @@
-<form >
-  <input [(ngModel)]="pessoa.nome" name="nome"/>
+<form [formGroup]="meuForm" (ngSubmit)="salvar(meuForm.value)">
+  <input  formControlName="nome"/>
+  <input type="submit" value="Salvar" />
 </form>
-<button (click)="salvar()">Salvar</button>
+
 <p>Lista de pessoas cadastradas:</p>
 <p *ngFor="let pessoa of (pessoa$ | async)">
-  Chave: {{pessoa.key}} e ativo: {{pessoa.active}}
-
-  <input value="{{pessoa.active}}" [(ngModel)]="pessoa.nome"/>
+  Nome: <input [(ngModel)]="pessoa.nome" /><br/>
+  ID: {{pessoa.id}}
   <button (click)="atualizar(pessoa)">Atualizar</button>
   <button (click)="apagar(pessoa)">Apagar</button>
 </p>

@@ -1,10 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule} from '@angular/forms';
+import { FormsModule, FormBuilder, ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { FirebaseConfig } from "../environments/firebase.config";
  import { AngularFireModule } from 'angularfire2/index';
- import { AngularFireDatabase } from "angularfire2/database";
+ import { AngularFirestoreModule } from "angularfire2/firestore";
 
 @NgModule({
   declarations: [
@@ -13,9 +13,11 @@ import { FirebaseConfig } from "../environments/firebase.config";
   imports: [
     BrowserModule,
      AngularFireModule.initializeApp(FirebaseConfig),
+     AngularFirestoreModule,
+     ReactiveFormsModule,
      FormsModule
   ],
-  providers: [AngularFireDatabase],
+  providers: [FormBuilder],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
