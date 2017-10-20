@@ -43,8 +43,8 @@ export class AppComponent{
     this.pessoaDB.doc(pessoa.id).update(pessoa);
   }
 
-  apagar(pessoa:Pessoa){
-    //this.pessoaDB.remove(pessoa.key);
+  apagar(pessoa:PessoaInterface){
+    this.pessoaDB.doc(pessoa.id).delete();
   }
 
 }
