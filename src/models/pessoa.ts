@@ -1,16 +1,9 @@
-export class Pessoa{
-    nome:String;
-    key:string;
-    idade:number;
-    active:boolean;
-    constructor(){
+import { PessoaInterface } from "./pessoaInterface";
 
-    }
-    build(data){
-        if(data.nome != undefined)
-            this.nome = data.nome;
-        if(data.key != undefined)
-            this.key = data.key;
-    }
-    
+export class Pessoa implements PessoaInterface {
+    nome: String;
+    key: string;
+    idade: number;
+    active: boolean;
+
 }
